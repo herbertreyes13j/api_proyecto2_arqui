@@ -1,0 +1,14 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "proyecto2",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "windowsAndroidStudioPath": "C:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe",
+  "server": {
+    "allowNavigation": ["http://192.168.0.23:8080"]
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}

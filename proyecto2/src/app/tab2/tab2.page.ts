@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import {MandoService} from '../services/mando.service';
+import {Mando} from '../models/mando.model'
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -7,6 +8,24 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private mandoservice:MandoService) {}
 
+  mandardato(dato){
+    console.log(dato);
+    const model= new Mando();
+    model.estado=dato;
+    console.log(model);
+    this.mandoservice.insertarmando(model).subscribe(
+      (val) => {
+        console.log("POST call successful value returned in body", 
+                    val);
+    },
+    response => {
+        console.log("POST call in error", response);
+    },
+    () => {
+        console.log("The POST observable is now completed.");
+    }
+    );
+  }
 }
